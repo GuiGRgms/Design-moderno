@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex Digital | Soluções Digitais Ultra Premium</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- AOS Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#06b6d4', // Cyan
+                        secondary: '#3b82f6', // Blue
+                        dark: '#030712',
+                        glass: 'rgba(15, 23, 42, 0.6)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(6, 182, 214, 0.5);
+        }
+
+        .border-glow {
+            box-shadow: 0 0 25px rgba(6, 182, 214, 0.15);
+            border-color: rgba(6, 182, 214, 0.4);
+        }
+
+        body {
+            background-color: #030712;
+            color: #f8fafc;
+        }
+
+        .gradient-bg {
+            background: radial-gradient(circle at 20% 30%, rgba(6, 182, 214, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #030712;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden font-sans custom-scrollbar">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 px-6 py-5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-11 h-11 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center border-glow shadow-lg transform hover:rotate-12 transition-transform">
+                    <i data-lucide="zap" class="text-white w-6 h-6 fill-white"></i>
+                </div>
+                <span class="text-2xl font-black font-display tracking-tight text-glow">
+                    Vertex<span class="text-primary">Digital</span>
+                </span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#home"
+                    class="text-sm font-semibold text-slate-300 hover:text-primary transition-all">Início</a>
+                <a href="#sobre"
+                    class="text-sm font-semibold text-slate-300 hover:text-primary transition-all">Sobre</a>
+                <a href="#servicos"
+                    class="text-sm font-semibold text-slate-300 hover:text-primary transition-all">Serviços</a>
+                <a href="#precos"
+                    class="text-sm font-semibold text-slate-300 hover:text-primary transition-all">Preços</a>
+                <a href="https://wa.me/5562996206334" target="_blank"
+                    class="px-7 py-3 rounded-full bg-primary text-white text-sm font-bold shadow-[0_0_20px_rgba(6,182,214,0.4)] hover:shadow-[0_0_35px_rgba(6,182,214,0.7)] transition-all transform hover:scale-105">
+                    Orçamento
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden gradient-bg">
+        <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none"
+            style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div data-aos="fade-right">
+                <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full glass border border-primary/20 mb-8">
+                    <span class="relative flex h-3 w-3">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+                    </span>
+                    <span class="text-[11px] font-bold uppercase tracking-[0.1em] text-primary">Entrega expressa em
+                        3 Dias</span>
+                </div>
+                <h1 class="text-5xl lg:text-[5.5rem] font-black font-display mb-8 leading-[1.1] tracking-tight">
+                    Receba um site <span class="text-primary text-glow italic">de elite</span> que gera <span
+                        class="text-secondary">lucro</span>
+                </h1>
+                <p class="text-xl text-slate-400 mb-12 max-w-xl leading-relaxed">
+                    Não fazemos apenas sites. Construímos ativos digitais de alta performance, ultra velozes e focados
+                    em converter cada visitante em um cliente fiel.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5 mb-16">
+                    <a href="https://wa.me/5562996206334"
+                        class="group px-10 py-5 rounded-2xl bg-primary text-white font-black flex items-center justify-center gap-3 shadow-[0_0_25px_rgba(6,182,214,0.5)] hover:shadow-[0_0_45px_rgba(6,182,214,0.8)] transition-all transform hover:scale-105">
+                        Começar Agora <i data-lucide="arrow-right"
+                            class="w-6 h-6 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                <div class="flex items-center gap-10">
+                    <div><span class="text-3xl font-black block">+20</span><span
+                            class="text-[10px] uppercase font-black text-slate-500 tracking-widest">Sucesso</span></div>
+                    <div class="w-px h-12 bg-white/10"></div>
+                    <div><span class="text-3xl font-black block">99.8%</span><span
+                            class="text-[10px] uppercase font-black text-slate-500 tracking-widest">Uptime</span></div>
+                    <div class="w-px h-12 bg-white/10"></div>
+                    <div>
+                        <div class="flex gap-1 mb-1">
+                            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                        </div>
+                        <span class="text-[10px] uppercase font-black text-slate-500 tracking-widest">Avaliações
+                            5★</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="absolute inset-0 bg-primary/20 blur-[150px] rounded-full animate-pulse-slow"></div>
+                <div class="relative w-full glass border-white/10 rounded-[3rem] p-4 shadow-2xl animate-float">
+                    <div class="bg-dark/80 rounded-[2.5rem] overflow-hidden">
+                        <div class="w-full h-10 bg-white/5 flex items-center px-6 gap-2">
+                            <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="p-10 space-y-8">
+                            <div class="h-6 w-1/4 bg-white/10 rounded-full"></div>
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="h-32 bg-primary/5 border border-primary/20 rounded-3xl"></div>
+                                <div class="h-32 bg-secondary/5 border border-secondary/20 rounded-3xl"></div>
+                            </div>
+                            <div
+                                class="h-48 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl border border-white/5 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <i data-lucide="bar-chart-3" class="w-20 h-20 text-primary opacity-40"></i>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="h-4 w-full bg-white/5 rounded-full"></div>
+                                <div class="h-4 w-2/3 bg-white/5 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Badge flutuante -->
+                <div class="absolute -bottom-10 -right-5 glass p-6 rounded-3xl border-glow animate-pulse">
+                    <p class="text-3xl font-black text-primary">100%</p>
+                    <p class="text-[10px] uppercase font-black text-slate-500">Google PageSpeed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logos -->
+    <section class="py-20 border-y border-white/5 bg-white/[0.02]">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-slate-500 font-bold uppercase tracking-[0.3em] text-[10px] mb-12">Marcas que
+                Confiam em Nossa Estratégia</p>
+            <div
+                class="flex flex-wrap justify-center gap-12 lg:gap-24 opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+                <span class="text-2xl font-black font-display tracking-tighter">Lumina</span>
+                <span class="text-2xl font-black font-display tracking-tighter">Vortex</span>
+                <span class="text-2xl font-black font-display tracking-tighter">Nexus</span>
+                <span class="text-2xl font-black font-display tracking-tighter">Quantum</span>
+                <span class="text-2xl font-black font-display tracking-tighter">Aether</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Card Pessoal -->
+                <div class="relative" data-aos="fade-right">
+                    <div class="glass rounded-[3rem] p-10 border-glow relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-primary/10 blur-[80px] rounded-full"></div>
+                        <!-- Ícone avatar -->
+                        <div
+                            class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-8">
+                            <i data-lucide="user" class="text-white w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-3xl font-black mb-1">Guilherme Alves</h3>
+                        <p class="text-primary font-black uppercase tracking-[0.2em] text-xs mb-6">CEO — Vertex Digital
+                        </p>
+                        <p class="text-slate-400 leading-relaxed mb-8">
+                            Atuando há anos no mercado de desenvolvimento web, apaixonado por tecnologia e por
+                            transformar ideias em soluções digitais que geram resultados reais para empresas.
+                        </p>
+                        <!-- Badge Entrega Rápida -->
+                        <div class="flex items-center gap-4 glass rounded-2xl p-4 border-primary/20">
+                            <div class="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center">
+                                <i data-lucide="zap" class="text-primary w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-black text-white">Entrega Rápida</p>
+                                <p class="text-xs text-slate-500">Sites prontos em até 3 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Texto descritivo -->
+                <div data-aos="fade-left">
+                    <p class="text-primary font-black uppercase tracking-[0.3em] text-xs mb-6">— Sobre Mim</p>
+                    <h2 class="text-4xl lg:text-5xl font-black font-display mb-8 leading-tight">
+                        Design moderno e foco em <span class="text-primary italic">resultados</span>
+                    </h2>
+                    <p class="text-slate-400 mb-6 leading-relaxed text-lg">
+                        Atuo na criação de sites e landing pages com foco em design moderno, funcionalidade e
+                        resultados.
+                    </p>
+                    <p class="text-slate-400 mb-6 leading-relaxed">
+                        Meu objetivo é ajudar empresas e empreendedores a fortalecerem sua presença online, criando
+                        páginas que não apenas sejam bonitas, mas que também conectem com o público certo e gerem
+                        oportunidades reais de crescimento.
+                    </p>
+                    <p class="text-slate-400 mb-10 leading-relaxed">
+                        Estou sempre em busca de evolução, aprendendo novas ferramentas e tendências para entregar
+                        projetos cada vez mais completos e estratégicos.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-5">
+                            <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center shrink-0">
+                                <i data-lucide="smartphone" class="text-primary w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-white">Design Responsivo</h4>
+                                <p class="text-sm text-slate-500">Perfeito em qualquer tela — celular, tablet ou
+                                    desktop.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-5">
+                            <div
+                                class="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center shrink-0">
+                                <i data-lucide="zap" class="text-secondary w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-white">Performance Otimizada</h4>
+                                <p class="text-sm text-slate-500">Sites extremamente rápidos para maior engajamento.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-5">
+                            <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center shrink-0">
+                                <i data-lucide="trending-up" class="text-primary w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-white">SEO e Conversão</h4>
+                                <p class="text-sm text-slate-500">Otimizado para buscadores e focado em captar clientes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row justify-between items-end mb-20 gap-10">
+                <div class="max-w-2xl" data-aos="fade-right">
+                    <h2 class="text-5xl lg:text-6xl font-black font-display mb-8">Nossas <span
+                            class="text-secondary">Especialidades</span></h2>
+                    <p class="text-slate-400 text-xl">Soluções completas para escalar sua presença online.</p>
+                </div>
+                <a href="https://wa.me/5562996206334"
+                    class="px-10 py-5 rounded-2xl glass border-primary/20 text-primary font-black hover:bg-primary hover:text-white transition-all shadow-xl"
+                    data-aos="fade-left">Falar com Consultor</a>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- S1 -->
+                <div class="p-10 glass-glow rounded-[3rem] group hover:-translate-y-3 transition-all duration-500 border-white/5"
+                    data-aos="fade-up">
+                    <i data-lucide="layout"
+                        class="text-secondary mb-8 w-14 h-14 group-hover:text-primary transition-colors"></i>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:text-glow transition-all">Landing Pages</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Páginas de venda rápida e conversão imediata.</p>
+                </div>
+                <!-- S2 -->
+                <div class="p-10 glass-glow rounded-[3rem] group hover:-translate-y-3 transition-all duration-500 border-white/5"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <i data-lucide="monitor"
+                        class="text-secondary mb-8 w-14 h-14 group-hover:text-primary transition-colors"></i>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:text-glow transition-all">Institucionais</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Presença sólida para empresas de autoridade.</p>
+                </div>
+                <!-- S3 -->
+                <div class="p-10 glass-glow rounded-[3rem] group hover:-translate-y-3 transition-all duration-500 border-white/5"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <i data-lucide="code"
+                        class="text-secondary mb-8 w-14 h-14 group-hover:text-primary transition-colors"></i>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:text-glow transition-all">Sistemas Web</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Automação de processos via navegador.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processo -->
+    <section class="py-32 bg-white/[0.02] overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-black font-display mb-6">Nosso <span
+                        class="text-primary">Processo</span></h2>
+                <p class="text-slate-500">Metodologia refinada para entrega perfeita.</p>
+            </div>
+            <div class="relative grid md:grid-cols-2 lg:grid-cols-6 gap-10">
+                <div class="absolute top-1/2 left-0 w-full h-px bg-white/5 hidden lg:block -translate-y-1/2"></div>
+                <!-- Step 1 -->
+                <div class="text-center relative z-10" data-aos="zoom-in">
+                    <div
+                        class="w-20 h-20 rounded-full glass border-2 border-primary mx-auto mb-6 flex items-center justify-center text-2xl font-black text-primary shadow-glow relative">
+                        01
+                        <div class="absolute inset-0 bg-primary/20 blur-xl rounded-full animate-pulse"></div>
+                    </div>
+                    <h5 class="font-bold mb-2">Briefing</h5>
+                    <p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest leading-loose">Alinhamento
+                        total</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center relative z-10" data-aos="zoom-in" data-aos-delay="100">
+                    <div
+                        class="w-20 h-20 rounded-full glass border-2 border-primary mx-auto mb-6 flex items-center justify-center text-2xl font-black text-primary relative">
+                        02</div>
+                    <h5 class="font-bold mb-2">Estratégia</h5>
+                    <p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest leading-loose">Plano de
+                        Ataque</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center relative z-10" data-aos="zoom-in" data-aos-delay="200">
+                    <div
+                        class="w-20 h-20 rounded-full glass border-2 border-primary mx-auto mb-6 flex items-center justify-center text-2xl font-black text-primary relative">
+                        03</div>
+                    <h5 class="font-bold mb-2">UX Design</h5>
+                    <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-loose">Foco no
+                        Usuário</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="text-center relative z-10" data-aos="zoom-in" data-aos-delay="300">
+                    <div
+                        class="w-20 h-20 rounded-full glass border-2 border-primary mx-auto mb-6 flex items-center justify-center text-2xl font-black text-primary relative">
+                        04</div>
+                    <h5 class="font-bold mb-2">Dev Elite</h5>
+                    <p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest leading-loose">Código Puro
+                    </p>
+                </div>
+                <!-- Step 5 -->
+                <div class="text-center relative z-10" data-aos="zoom-in" data-aos-delay="400">
+                    <div
+                        class="w-20 h-20 rounded-full glass border-2 border-primary mx-auto mb-6 flex items-center justify-center text-2xl font-black text-primary relative">
+                        05</div>
+                    <h5 class="font-bold mb-2">Revisão</h5>
+                    <p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest leading-loose">
+                        Perfeccionismo</p>
+                </div>
+                <!-- Step 6 -->
+                <div class="text-center relative z-10" data-aos="zoom-in" data-aos-delay="500">
+                    <div
+                        class="w-20 h-20 rounded-full glass border-2 border-primary mx-auto mb-6 flex items-center justify-center text-2xl font-black text-primary relative">
+                        06</div>
+                    <h5 class="font-bold mb-2">Lançamento</h5>
+                    <p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest leading-loose">Sucesso
+                        Online</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="precos" class="py-32 relative">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-5xl lg:text-6xl font-black font-display mb-6">Planos & <span
+                        class="text-primary italic">Valores</span></h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Soluções sob medida para cada etapa do seu negócio.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Landing Page -->
+                <div class="p-10 glass rounded-[2.5rem] border border-white/10 hover:border-primary/30 transition-all duration-300 flex flex-col"
+                    data-aos="fade-right">
+                    <h3 class="text-3xl font-black mb-3">Landing Page</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Ideal para apresentar seu negócio de forma clara e
+                        objetiva numa única página.</p>
+                    <div class="mb-10">
+                        <span class="text-5xl font-black">R$ 299,00</span>
+                    </div>
+                    <ul class="space-y-4 mb-12 flex-grow">
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="text-primary font-bold">&#10003;</span> Layout personalizado</li>
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="text-primary font-bold">&#10003;</span> Design Gráfico</li>
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="text-primary font-bold">&#10003;</span> Foco total/Conversão</li>
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="text-primary font-bold">&#10003;</span> Entregamos em até 3 dias úteis</li>
+                    </ul>
+                    <a href="https://wa.me/5562996206334" target="_blank"
+                        class="block w-full py-5 text-center glass rounded-2xl font-black hover:bg-white/10 transition-all border border-white/10">Quero
+                        o Landing Page</a>
+                </div>
+                <!-- Site Institucional -->
+                <div class="p-10 rounded-[2.5rem] border-2 border-primary bg-primary/5 shadow-[0_0_40px_rgba(6,182,214,0.15)] flex flex-col relative"
+                    data-aos="fade-left">
+                    <div
+                        class="absolute top-0 right-8 bg-primary text-white text-[9px] font-black uppercase px-5 py-1 rounded-b-xl tracking-widest">
+                        Popular</div>
+                    <h3 class="text-3xl font-black mb-3">Site Institucional</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">A porta de entrada na internet. Representa sua
+                        empresa com informações detalhadas.</p>
+                    <div class="mb-10">
+                        <span class="text-5xl font-black text-glow">Consulte</span>
+                    </div>
+                    <ul class="space-y-4 mb-12 flex-grow">
+                        <li class="flex items-center gap-3 text-slate-200"><span
+                                class="text-primary font-bold">&#10003;</span> Layout personalizado</li>
+                        <li class="flex items-center gap-3 text-slate-200"><span
+                                class="text-primary font-bold">&#10003;</span> Design Gráfico</li>
+                        <li class="flex items-center gap-3 text-slate-200"><span
+                                class="text-primary font-bold">&#10003;</span> Conteúdo em até 5 páginas</li>
+                        <li class="flex items-center gap-3 text-slate-200"><span
+                                class="text-primary font-bold">&#10003;</span> Entregamos em até 3 dias úteis</li>
+                    </ul>
+                    <a href="https://wa.me/5562996206334" target="_blank"
+                        class="block w-full py-5 text-center bg-gradient-to-r from-primary to-secondary text-white rounded-2xl font-black shadow-lg transform hover:scale-105 transition-all">Quero
+                        o Institucional</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Final CTA -->
+    <section class="py-40 relative overflow-hidden">
+        <div class="absolute inset-0 bg-primary/20 blur-[150px] rounded-full translate-y-1/2"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <div class="glass p-16 lg:p-32 rounded-[5rem] border-primary/30 shadow-[0_0_80px_rgba(6,182,214,0.15)]"
+                data-aos="zoom-in">
+                <h2 class="text-5xl lg:text-8xl font-black font-display mb-10 leading-tight">
+                    Domine o <br><span class="text-primary text-glow italic">seu mercado.</span>
+                </h2>
+                <p class="text-2xl text-slate-400 mb-16 max-w-2xl mx-auto">Sua empresa merece uma presença digital que
+                    intimida a concorrência.</p>
+                <a href="https://wa.me/5562996206334" target="_blank"
+                    class="px-16 py-8 rounded-3xl bg-primary text-white text-2xl font-black shadow-[0_0_40px_rgba(6,182,214,0.6)] hover:shadow-[0_0_70px_rgba(6,182,214,0.9)] transition-all flex items-center gap-4 mx-auto w-fit transform hover:scale-110">
+                    Começar Agora <i data-lucide="zap" class="fill-white"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-32 border-t border-white/5 bg-dark">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-20 mb-24">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                            <i data-lucide="zap" class="text-white w-5 h-5 fill-white"></i>
+                        </div>
+                        <span class="text-3xl font-black font-display tracking-tight text-white">Vertex<span
+                                class="text-primary">Digital</span></span>
+                    </div>
+                    <p class="text-slate-500 max-w-sm mb-10 leading-loose">
+                        Transformando empresas comuns em referências digitais através de design futurista e engenharia
+                        de software de elite.
+                    </p>
+                    <div class="flex gap-5">
+                        <a href="https://instagram.com" target="_blank"
+                            class="w-12 h-12 rounded-2xl glass flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary/50 transition-all transform hover:-translate-y-1">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                        <a href="https://wa.me/5562996206334" target="_blank"
+                            class="w-12 h-12 rounded-2xl glass flex items-center justify-center text-slate-400 hover:text-green-500 hover:border-green-500/50 transition-all transform hover:-translate-y-1">
+                            <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-black font-display text-white mb-8 uppercase tracking-widest text-sm">Links Úteis
+                    </h4>
+                    <ul class="space-y-4 text-slate-500">
+                        <li><a href="#home" class="hover:text-primary transition-all">Início</a></li>
+                        <li><a href="#sobre" class="hover:text-primary transition-all">Sobre</a></li>
+                        <li><a href="#servicos" class="hover:text-primary transition-all">Especialidades</a></li>
+                        <li><a href="#precos" class="hover:text-primary transition-all">Preços</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-black font-display text-white mb-8 uppercase tracking-widest text-sm">Contato Direct
+                    </h4>
+                    <ul class="space-y-6 text-slate-500">
+                        <li class="flex items-center gap-4"><i data-lucide="mail" class="text-primary w-5 h-5"></i>
+                            contato@vertex.com</li>
+                        <li class="flex items-center gap-4"><i data-lucide="map-pin" class="text-primary w-5 h-5"></i>
+                            Goiânia GO, Brasil</li>
+                        <li class="flex items-center gap-4"><i data-lucide="clock" class="text-primary w-5 h-5"></i> 09h
+                            - 18h</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold text-slate-600 uppercase tracking-widest">
+                <p>© 2024 Vertex Digital Agency. Todos os direitos reservados.</p>
+                <div class="flex gap-10">
+                    <a href="#" class="hover:text-white">Privacidade</a>
+                    <a href="#" class="hover:text-white">Termos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Fixo WhatsApp -->
+    <a href="https://wa.me/5562996206334" target="_blank" class="fixed bottom-10 right-10 z-[200] group">
+        <div
+            class="absolute inset-0 bg-green-500/30 blur-2xl rounded-full animate-pulse group-hover:bg-green-500/50 transition-all">
+        </div>
+        <div
+            class="relative w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-2xl transform transition-all group-hover:scale-110 active:scale-95">
+            <i data-lucide="message-circle" class="w-10 h-10 fill-white/10"></i>
+        </div>
+    </a>
+
+    <script>
+        // Lucide Icons
+        lucide.createIcons();
+
+        // AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-expo'
+        });
+
+        // Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('glass', 'py-4', 'border-b', 'border-white/5');
+                nav.classList.remove('py-5');
+            } else {
+                nav.classList.remove('glass', 'py-4', 'border-b', 'border-white/5');
+                nav.classList.add('py-5');
+            }
+        });
+
+        // FAQ Toggle
+        function toggleFaq(index) {
+            const contents = document.querySelectorAll('.faq-content');
+            const icons = document.querySelectorAll('.faq-icon');
+
+            contents[index].classList.toggle('hidden');
+            icons[index].classList.toggle('rotate-180');
+        }
+    </script>
+</body>
+
+</html>
