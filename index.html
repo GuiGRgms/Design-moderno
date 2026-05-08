@@ -103,8 +103,7 @@
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 px-6 py-5">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div
-                    class="w-11 h-11 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center border-glow shadow-lg transform hover:rotate-12 transition-transform">
+                <div class="w-11 h-11 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center border-glow shadow-lg transform hover:rotate-12 transition-transform">
                     <i data-lucide="zap" class="text-white w-6 h-6 fill-white"></i>
                 </div>
                 <span class="text-2xl font-black font-display tracking-tight text-glow">
@@ -112,61 +111,66 @@
                 </span>
             </div>
 
+            <!-- Menu Desktop -->
             <div class="hidden md:flex items-center gap-8">
-                <a href="#home"
-                    class="text-sm font-semibold text-slate-300 hover:text-primary transition-all">Início</a>
-                <a href="#sobre"
-                    class="text-sm font-semibold text-slate-300 hover:text-primary transition-all">Sobre</a>
-                <a href="#servicos"
-                    class="text-sm font-semibold text-slate-300 hover:text-primary transition-all">Serviços</a>
-                <a href="#precos"
-                    class="text-sm font-semibold text-slate-300 hover:text-primary transition-all">Preços</a>
-                <a href="https://wa.me/5562996206334" target="_blank"
-                    class="px-7 py-3 rounded-full bg-primary text-white text-sm font-bold shadow-[0_0_20px_rgba(6,182,214,0.4)] hover:shadow-[0_0_35px_rgba(6,182,214,0.7)] transition-all transform hover:scale-105">
+                <a href="#home" class="text-sm font-semibold text-slate-300 hover:text-primary transition-all">Início</a>
+                <a href="#sobre" class="text-sm font-semibold text-slate-300 hover:text-primary transition-all">Sobre</a>
+                <a href="#servicos" class="text-sm font-semibold text-slate-300 hover:text-primary transition-all">Serviços</a>
+                <a href="#precos" class="text-sm font-semibold text-slate-300 hover:text-primary transition-all">Preços</a>
+                <a href="https://wa.me/5562996206334" target="_blank" class="px-7 py-3 rounded-full bg-primary text-white text-sm font-bold shadow-[0_0_20px_rgba(6,182,214,0.4)] hover:shadow-[0_0_35px_rgba(6,182,214,0.7)] transition-all transform hover:scale-105">
                     Orçamento
                 </a>
             </div>
+
+            <!-- Menu Mobile (Hamburguer) -->
+            <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" onclick="toggleMenu()">
+                <span class="w-6 h-0.5 bg-white transition-all" id="bar1"></span>
+                <span class="w-6 h-0.5 bg-white transition-all" id="bar2"></span>
+                <span class="w-6 h-0.5 bg-white transition-all" id="bar3"></span>
+            </button>
+        </div>
+
+        <!-- Dropdown Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden glass mt-4 rounded-2xl p-6 flex flex-col gap-5">
+            <a href="#home" onclick="toggleMenu()" class="text-slate-300 font-semibold hover:text-primary">Início</a>
+            <a href="#sobre" onclick="toggleMenu()" class="text-slate-300 font-semibold hover:text-primary">Sobre</a>
+            <a href="#servicos" onclick="toggleMenu()" class="text-slate-300 font-semibold hover:text-primary">Serviços</a>
+            <a href="#precos" onclick="toggleMenu()" class="text-slate-300 font-semibold hover:text-primary">Preços</a>
+            <a href="https://wa.me/5562996206334" target="_blank" class="px-6 py-3 rounded-xl bg-primary text-white font-bold text-center">Solicitar Orçamento</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden gradient-bg">
+    <section id="home" class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden gradient-bg">
         <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none"
             style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
 
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10 w-full">
+            <!-- Coluna de Texto -->
             <div data-aos="fade-right">
-                <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full glass border border-primary/20 mb-8">
+                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass border border-primary/20 mb-6">
                     <span class="relative flex h-3 w-3">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
                     </span>
-                    <span class="text-[11px] font-bold uppercase tracking-[0.1em] text-primary">Entrega expressa em
-                        3 Dias</span>
+                    <span class="text-[11px] font-bold uppercase tracking-[0.1em] text-primary">Entrega expressa em 3 Dias</span>
                 </div>
-                <h1 class="text-5xl lg:text-[5.5rem] font-black font-display mb-8 leading-[1.1] tracking-tight">
-                    Receba um site <span class="text-primary text-glow italic">de elite</span> que gera <span
-                        class="text-secondary">lucro</span>
+                <h1 class="text-4xl sm:text-5xl lg:text-[5.5rem] font-black font-display mb-6 leading-[1.1] tracking-tight">
+                    Receba um site <span class="text-primary text-glow italic">de elite</span> que gera <span class="text-secondary">lucro</span>
                 </h1>
-                <p class="text-xl text-slate-400 mb-12 max-w-xl leading-relaxed">
-                    Não fazemos apenas sites. Construímos ativos digitais de alta performance, ultra velozes e focados
-                    em converter cada visitante em um cliente fiel.
+                <p class="text-base sm:text-lg lg:text-xl text-slate-400 mb-8 max-w-xl leading-relaxed">
+                    N&#227;o fazemos apenas sites. Constru&#237;mos ativos digitais de alta performance, ultra velozes e focados em converter cada visitante em um cliente fiel.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-5 mb-16">
-                    <a href="https://wa.me/5562996206334"
-                        class="group px-10 py-5 rounded-2xl bg-primary text-white font-black flex items-center justify-center gap-3 shadow-[0_0_25px_rgba(6,182,214,0.5)] hover:shadow-[0_0_45px_rgba(6,182,214,0.8)] transition-all transform hover:scale-105">
-                        Começar Agora <i data-lucide="arrow-right"
-                            class="w-6 h-6 group-hover:translate-x-1 transition-transform"></i>
+                <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                    <a href="https://wa.me/5562996206334" class="group px-8 py-4 rounded-2xl bg-primary text-white font-black flex items-center justify-center gap-3 shadow-[0_0_25px_rgba(6,182,214,0.5)] hover:shadow-[0_0_45px_rgba(6,182,214,0.8)] transition-all transform hover:scale-105">
+                        Come&#231;ar Agora <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
-                <div class="flex items-center gap-10">
-                    <div><span class="text-3xl font-black block">+20</span><span
-                            class="text-[10px] uppercase font-black text-slate-500 tracking-widest">Sucesso</span></div>
-                    <div class="w-px h-12 bg-white/10"></div>
-                    <div><span class="text-3xl font-black block">99.8%</span><span
-                            class="text-[10px] uppercase font-black text-slate-500 tracking-widest">Uptime</span></div>
-                    <div class="w-px h-12 bg-white/10"></div>
+                <div class="flex items-center gap-6 sm:gap-10 flex-wrap">
+                    <div><span class="text-2xl sm:text-3xl font-black block">+20</span><span class="text-[10px] uppercase font-black text-slate-500 tracking-widest">Projetos</span></div>
+                    <div class="w-px h-10 bg-white/10"></div>
+                    <div><span class="text-2xl sm:text-3xl font-black block">99.8%</span><span class="text-[10px] uppercase font-black text-slate-500 tracking-widest">Uptime</span></div>
+                    <div class="w-px h-10 bg-white/10"></div>
                     <div>
                         <div class="flex gap-1 mb-1">
                             <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
@@ -175,44 +179,91 @@
                             <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
                             <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
                         </div>
-                        <span class="text-[10px] uppercase font-black text-slate-500 tracking-widest">Avaliações
-                            5★</span>
+                        <span class="text-[10px] uppercase font-black text-slate-500 tracking-widest">Avalia&#231;&#245;es 5&#9733;</span>
                     </div>
                 </div>
             </div>
 
-            <div class="relative" data-aos="zoom-in" data-aos-duration="1500">
-                <div class="absolute inset-0 bg-primary/20 blur-[150px] rounded-full animate-pulse-slow"></div>
-                <div class="relative w-full glass border-white/10 rounded-[3rem] p-4 shadow-2xl animate-float">
-                    <div class="bg-dark/80 rounded-[2.5rem] overflow-hidden">
-                        <div class="w-full h-10 bg-white/5 flex items-center px-6 gap-2">
-                            <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+            <!-- Dashboard Mockup - visível em mobile e desktop -->
+            <div class="relative mt-10 lg:mt-0" data-aos="zoom-in" data-aos-duration="1200">
+                <div class="absolute inset-0 bg-primary/20 blur-[120px] rounded-full"></div>
+                <div class="relative w-full glass border border-white/10 rounded-[2rem] lg:rounded-[2.5rem] shadow-2xl overflow-hidden">
+                    <!-- Barra do browser -->
+                    <div class="w-full h-9 bg-white/5 border-b border-white/5 flex items-center px-4 gap-2">
+                        <div class="flex gap-1.5">
+                            <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
                         </div>
-                        <div class="p-10 space-y-8">
-                            <div class="h-6 w-1/4 bg-white/10 rounded-full"></div>
-                            <div class="grid grid-cols-2 gap-6">
-                                <div class="h-32 bg-primary/5 border border-primary/20 rounded-3xl"></div>
-                                <div class="h-32 bg-secondary/5 border border-secondary/20 rounded-3xl"></div>
+                        <div class="flex-1 mx-3 h-5 bg-white/5 rounded-full flex items-center justify-center">
+                            <span class="text-[9px] text-slate-500">vertexdigital.com.br</span>
+                        </div>
+                        <div class="w-4 h-4 rounded-full bg-primary/30 flex items-center justify-center">
+                            <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                        </div>
+                    </div>
+
+                    <!-- Conteúdo do dashboard -->
+                    <div class="p-5 lg:p-6 space-y-4">
+                        <!-- Header -->
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-500 uppercase tracking-widest">Painel do Cliente</p>
+                                <p class="font-black text-white text-sm">Vertex Digital</p>
                             </div>
-                            <div
-                                class="h-48 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl border border-white/5 relative">
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <i data-lucide="bar-chart-3" class="w-20 h-20 text-primary opacity-40"></i>
-                                </div>
+                            <div class="px-3 py-1 rounded-full bg-green-500/15 border border-green-500/30 text-green-400 text-[10px] font-bold flex items-center gap-1.5">
+                                <div class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
+                                Ativo
                             </div>
-                            <div class="space-y-4">
-                                <div class="h-4 w-full bg-white/5 rounded-full"></div>
-                                <div class="h-4 w-2/3 bg-white/5 rounded-full"></div>
+                        </div>
+
+                        <!-- Métricas -->
+                        <div class="grid grid-cols-3 gap-2 lg:gap-3">
+                            <div class="bg-primary/10 border border-primary/20 rounded-xl p-2 lg:p-3 text-center">
+                                <p class="text-primary font-black text-base lg:text-lg">+20</p>
+                                <p class="text-[9px] text-slate-500 uppercase tracking-wide">Projetos</p>
                             </div>
+                            <div class="bg-primary/10 border border-primary/20 rounded-xl p-2 lg:p-3 text-center">
+                                <p class="text-primary font-black text-base lg:text-lg">100%</p>
+                                <p class="text-[9px] text-slate-500 uppercase tracking-wide">Speed</p>
+                            </div>
+                            <div class="bg-primary/10 border border-primary/20 rounded-xl p-2 lg:p-3 text-center">
+                                <p class="text-primary font-black text-base lg:text-lg">5.0</p>
+                                <p class="text-[9px] text-slate-500 uppercase tracking-wide">Avalia&#231;&#227;o</p>
+                            </div>
+                        </div>
+
+                        <!-- Gráfico de performance -->
+                        <div class="bg-gradient-to-tr from-primary/10 to-transparent rounded-xl p-4 border border-white/5">
+                            <p class="text-[9px] text-slate-500 uppercase tracking-widest mb-3 font-bold">Performance do Site</p>
+                            <div class="flex items-end gap-1.5 lg:gap-2 h-14 lg:h-16">
+                                <div class="flex-1 bg-primary/25 rounded-t" style="height:35%"></div>
+                                <div class="flex-1 bg-primary/35 rounded-t" style="height:55%"></div>
+                                <div class="flex-1 bg-primary/45 rounded-t" style="height:45%"></div>
+                                <div class="flex-1 bg-primary/55 rounded-t" style="height:70%"></div>
+                                <div class="flex-1 bg-primary/70 rounded-t" style="height:85%"></div>
+                                <div class="flex-1 bg-primary rounded-t shadow-[0_0_10px_rgba(6,182,214,0.5)]" style="height:100%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Tags de funcionalidades -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="flex items-center gap-1.5 text-[10px] text-slate-400 bg-white/5 px-2.5 py-1 rounded-full">
+                                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span> SEO Otimizado
+                            </span>
+                            <span class="flex items-center gap-1.5 text-[10px] text-slate-400 bg-white/5 px-2.5 py-1 rounded-full">
+                                <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> Mobile Ready
+                            </span>
+                            <span class="flex items-center gap-1.5 text-[10px] text-slate-400 bg-white/5 px-2.5 py-1 rounded-full">
+                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Alta Performance
+                            </span>
                         </div>
                     </div>
                 </div>
                 <!-- Badge flutuante -->
-                <div class="absolute -bottom-10 -right-5 glass p-6 rounded-3xl border-glow animate-pulse">
-                    <p class="text-3xl font-black text-primary">100%</p>
-                    <p class="text-[10px] uppercase font-black text-slate-500">Google PageSpeed</p>
+                <div class="absolute -bottom-4 -right-2 lg:-bottom-8 lg:-right-4 glass px-4 py-3 rounded-2xl border-glow animate-pulse">
+                    <p class="text-xl lg:text-2xl font-black text-primary">100%</p>
+                    <p class="text-[9px] uppercase font-black text-slate-500">PageSpeed</p>
                 </div>
             </div>
         </div>
@@ -622,6 +673,12 @@
 
             contents[index].classList.toggle('hidden');
             icons[index].classList.toggle('rotate-180');
+        }
+
+        // Menu Mobile Hamburguer
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
         }
     </script>
 </body>
